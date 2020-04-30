@@ -12,7 +12,7 @@ Depends:
     R (>= 3.1.0)
 Imports:
     data.table,
-    mlr3 (>= 0.1.7),
+    mlr3 (>= 0.2.0.9000),
     mlr3misc,
     mlr3proba (>= 0.1.5.9000),
     paradox,
@@ -24,7 +24,8 @@ Suggests:
     rmarkdown,
     testthat
 Remotes:
-    mlr-org/mlr3proba
+    mlr-org/mlr3proba,
+    mlr-org/mlr3
 Encoding: UTF-8
 NeedsCompilation: no
 Roxygen: list(markdown = TRUE)
