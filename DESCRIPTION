@@ -1,6 +1,6 @@
 Package: mlr3learners.np
 Title: Learners from the {np} package for 'mlr3'
-Version: 0.1.1.9000
+Version: 0.1.2
 Authors@R:
     person(given = "Raphael",
            family = "Sonabend",
@@ -19,7 +19,7 @@ Imports:
     R6
 Suggests:
     checkmate,
-    distr6,
+    distr6 (>= 1.4.2),
     np,
     rmarkdown,
     testthat
