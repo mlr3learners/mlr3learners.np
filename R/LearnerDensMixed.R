@@ -84,18 +84,18 @@ LearnerDensMixed = R6Class("LearnerDensMixed",
       pars = self$param_set$get_values(tag = "train")
       data = task$truth()
 
-      pdf <- function(x1) {} #nolint
+      pdf <- function(x) {} #nolint
       body(pdf) <- substitute({
         with_package("np", mlr3misc::invoke(np::npudens,
           tdat = data.frame(data),
-          edat = data.frame(x1), .args = pars)$dens)
+          edat = data.frame(x), .args = pars)$dens)
       })
 
       kernel = if (is.null(pars$ckertype)) "gaussian" else pars$ckertype
       distr6::Distribution$new(
         name = paste("Mixed KDE", kernel),
         short_name = paste0("MixedKDE_", kernel),
-        pdf = pdf)
+        pdf = pdf, type = set6::Reals$new())
     },
 
     .predict = function(task) {
